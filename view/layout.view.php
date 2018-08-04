@@ -188,10 +188,10 @@
             </div>
             <div class="mega-container visible-lg visible-md visible-sm">
               <div class="navleft-container">
-                <div class="mega-menu-title">
+                <div class="mega-menu-title" >
                   <h3>Categories</h3>
                 </div>
-                <div class="mega-menu-category">
+                <div class="mega-menu-category" style="display: none">
                   <ul class="nav">
                   <!-- <?php 
                   echo '<pre>';

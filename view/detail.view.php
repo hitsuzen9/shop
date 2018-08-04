@@ -218,3 +218,4 @@ $related_detail=$data['related_detail'];
       })
     })
     </script>
+    
