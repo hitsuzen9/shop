@@ -1,6 +1,6 @@
 <?php
 include_once 'controller/CheckoutController.php';
 $c= new CheckoutController;
-$c->getCheckout();
+return isset($_POST['btnCheckout']) ? $c->postCheckout() : $c->getCheckout();
 
 ?>

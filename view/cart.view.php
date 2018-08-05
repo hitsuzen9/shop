@@ -78,7 +78,7 @@ $cart=$data['cart']->items;
                   </tfoot>
                 </table>
               </div>
-              <div class="cart_navigation"> <a class="continue-btn" href="./"><i class="fa fa-arrow-left"> </i>&nbsp; Tiếp tục mua</a> <a class="checkout-btn" href="#"><i class="fa fa-check"></i> Đặt hàng</a> </div>
+              <div class="cart_navigation"> <a class="continue-btn" href="./"><i class="fa fa-arrow-left"> </i>&nbsp; Tiếp tục mua</a> <a class="checkout-btn" href="checkout.php"><i class="fa fa-check"></i> Đặt hàng</a> </div>
             </div>
             <?php else:?>
             <?php echo "<h3>Bạn hiện không có sản phẩm cần thanh toán </h3>" ?>

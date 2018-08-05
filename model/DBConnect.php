@@ -28,7 +28,7 @@ class DBConnect{
     //INSERT | UPDATE | DELETE
     function executeQuery($query, $params=[]){
         $stmt = $this->setStatement($query,$params);
-        $result = $stmt->execute();
+        return $stmt->execute();
     }
 
     //SELECT 1 ROW

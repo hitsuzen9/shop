@@ -12,7 +12,7 @@ RewriteRule ^([a-z0-9-,()]+)-([0-9]+)(.html)?$ detail.php?alias=$1&id=$2
 
 RewriteRule ^([0-9-]+)/([a-z0-9-()]+)/([a-zA-Z0-9]+)/([a-z0-9]+)$ sort-price.php?pricesend=$1&alias=$2&id=$3&page=$4
 
-
+RewriteRule ^([a-zA-Z0-9]+)/([0-9]+)$ confirm-order.php?token=$1&token-time=$2
 
 RewriteRule ^404.html$ 404.php
 
