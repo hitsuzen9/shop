@@ -1,7 +1,7 @@
 <?php 
 class DBConnect{
     private $connect;
-    function __construct($dbName ='apple',$user='root',$password=''){
+    function __construct($dbName ='apple',$user='root',$password='teovati78'){
         try{
             $this->connect = new PDO("mysql:host=localhost;dbname=$dbName",$user,$password);
             $this->connect->exec('set names utf8');

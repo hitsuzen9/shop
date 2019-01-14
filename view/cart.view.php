@@ -6,17 +6,13 @@ $cart=$data['cart']->items;
 // print_r($carts);
 // echo '</pre>';
 ?>
-
-
 <section class="main-container col1-layout">
     <div class="main container">
       <div class="col-main">
         <div class="cart">
-          
           <div class="page-content page-order"><div class="page-title">
             <h2>Shopping Cart</h2>
           </div>
-            
             <?php if($carts->totalQty != 0):?>
             <div class="order-detail-content">
               <div class="table-responsive">
@@ -25,22 +21,18 @@ $cart=$data['cart']->items;
                     <tr>
                       <th class="cart_product">Product</th>
                       <th>Description</th>
-                      
                       <th>Price</th>
-                      
                       <th>Qty</th>
                       <th>Total</th>
                       <th  class="action" ><i class="fa fa-trash-o"></i></th>
                     </tr>
                   </thead>
                   <tbody>
-                    
                     <?php foreach($cart as $key => $c) :?>
                     <tr id="deleteRow-<?=$key?>">
                       <td class="cart_product"><a href="#"><img src="public/images/products/<?=$c['item']->image?>" alt="Product"></a></td>
                       <td class="cart_description"><p class="product-name"><a href="#"><?=$c['item']->detail?> </a></p>
         
-                      
                       <td class="price" >
                         <span>
                         <?php if($c['item']->promotion_price>0):?>

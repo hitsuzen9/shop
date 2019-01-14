@@ -8,6 +8,7 @@ class CartController extends BaseController{
 
     function shoppingCart(){
         $oldCart= isset($_SESSION['cart']) ? $_SESSION['cart'] : null; 
+        //print_r($_SESSION['cart']);
         $cart = new Cart($oldCart);
         $data = [
             'cart' => $cart,

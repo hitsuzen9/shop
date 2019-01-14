@@ -1,9 +1,8 @@
 <?php
-//include_once "controller/CheckoutController.php";
+include_once "controller/CheckoutController.php";
+$c= new CheckoutController;
 
-echo $_GET['token'];
-
-echo $_GET['token-time'];
+return $c->getConfirmOrder();
 
 
 ?>

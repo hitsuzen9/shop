@@ -150,18 +150,18 @@
               <!-- End Search -->
             </div>
             <!-- top cart -->
-
+           
             <div class="col-lg-3 col-xs-3 top-cart">
               <div class="top-cart-contain">
                 <div class="mini-cart">
                   <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle">
-                    <a href="#">
-                      <div class="cart-icon">
+                    <a href="shopping-cart">
+                      <div class="cart-icon" style="padding-top: 15px;">
                         <i class="fa fa-shopping-cart"></i>
                       </div>
                       <div class="shoppingcart-inner hidden-xs">
                         <span class="cart-title">Shopping Cart</span>
-                        <span class="cart-total">4 Item(s): $520.00</span>
+                        <span class="cart-total"><?=$cartLayout->totalQty?> item: <?=$cartLayout->promtPrice?> vnđ</span>
                       </div>
                     </a>
                   </div>
@@ -510,7 +510,7 @@
      
       <div class="modal-body">
         <h3>Đã thêm <i><u id='name'>name</u></i> vào giỏ hàng</h3>
-        <h4><div><a href="shopping-cart.php" id="shopping-cart">Xem giỏ hàng</a></div></h4>
+        <h4><div><a href="shopping-cart" id="shopping-cart">Xem giỏ hàng</a></div></h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -1,8 +1,12 @@
 <?php
 include_once 'model/Basemodel.php';
-
+//session_start();
+//include_once 'CartController.php';
 class BaseController{
     function loadView($view='home',$data=[]){
+        //$cartLayout= isset($_SESSION['cart']) ? $_SESSION['cart'] : null; 
+        //die;
+        //print_r($cartLayout);
         $model = new BaseModel;
         $categories=$model->selectCategories();
         //print_r($categories);

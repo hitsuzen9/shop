@@ -19,7 +19,7 @@ class CheckoutController extends BaseController{
     }
 
     function postCheckout(){
-        print_r($_POST);
+        //print_r($_POST);
         $name= $_POST['fullname'];
         $gender= $_POST['gender'];
         $address= $_POST['address'];
@@ -41,6 +41,8 @@ class CheckoutController extends BaseController{
             $total= $cart->totalPrice;
             $promtPrice= $cart->promtPrice;
             $token= createToken();
+            //print_r($token);
+            
             $tokenDate=date('Y-m-d H:i:s');
             $tokenTime = strtotime($tokenDate);
             $idBill = $model->saveBill($idCustomer,$dateOrder,$total,$promtPrice,$paymentMethod,$note,
@@ -83,6 +85,37 @@ class CheckoutController extends BaseController{
             $_SESSION['message_error']='Đặt hàng không thành công vui lòng kiểm tra email để xác nhận';
         }
         header('Location:checkout.php');
+
+    }
+
+    function getConfirmOrder(){
+        $model = new CheckoutModel;
+
+        $token = $_GET['token'];
+
+        $oldTIme = $_GET['token-time'];
+
+        $today = strtotime(date('Y-m-d H:i:s'),time());
+
+        
+        $bill = $model->findBillByToken($token);
+        
+        if($bill){
+
+            if($today-$oldTIme <= 86400){
+                $model->setStatusBill($token);
+                $_SESSION['message_success']='Đơn hàng đã được xác nhận';
+            }
+            else{
+                $_SESSION['message_error']='thời gian để xác nhận đơn hàng đã hết hạn, vui lòng thanh toán lại đơn hàng';
+            }
+
+            
+        }
+        else{
+            $_SESSION['message_error']='liên kết không hợp lệ';
+        }
+        header('Location:http://localhost/shop1701/checkout.php');
     }
 }
 
